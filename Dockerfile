@@ -21,6 +21,7 @@ RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev" \
      -y --no-install-recommends \
      $buildDeps $runtimeDeps net-tools \
     && gem install bundler --version 2.1.4 \
+    && gem install fluent-plugin-kafka --no-document \
     && bundle config silence_root_warning true \
     && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \    
     && SUDO_FORCE_REMOVE=yes \
