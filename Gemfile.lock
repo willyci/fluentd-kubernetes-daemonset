@@ -24,6 +24,7 @@ GEM
     ffi-compiler (1.0.1)
       ffi (>= 1.0.0)
       rake
+    fluent-plugin-kafka (0.15.2)
     fluent-config-regexp-type (1.0.0)
       fluentd (> 1.0.0, < 2)
     fluent-plugin-concat (2.4.0)
@@ -143,6 +144,7 @@ DEPENDENCIES
   fluent-plugin-record-modifier (~> 2.0.0)
   fluent-plugin-rewrite-tag-filter (~> 2.2.0)
   fluent-plugin-systemd (~> 1.0.1)
+  fluent-plugin-kafka
   fluentd (= 1.11.3)
   oj (= 3.8.1)
 
