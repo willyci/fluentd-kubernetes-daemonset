@@ -23,7 +23,6 @@ RUN buildDeps="sudo make gcc g++ libc-dev libffi-dev" \
     && gem install bundler --version 2.1.4 \
     && bundle config silence_root_warning true \
     && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \    
-    && gem install fluent-plugin-kafka --no-document \
     && SUDO_FORCE_REMOVE=yes \
     apt-get purge -y --auto-remove \
                   -o APT::AutoRemove::RecommendsImportant=false \
