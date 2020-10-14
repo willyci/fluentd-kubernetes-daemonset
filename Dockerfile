@@ -48,3 +48,5 @@ ENV FLUENTD_CONF="fluent.conf"
 
 # Overwrite ENTRYPOINT to run fluentd as root for /var/log / /var/lib
 # ENTRYPOINT ["tini", "--", "/fluentd/entrypoint.sh"]
+# ENTRYPOINT ["tini", "--", "gem install fluent-plugin-kafka --no-document"]
+ENTRYPOINT ["tini", "--", "gem list"]
