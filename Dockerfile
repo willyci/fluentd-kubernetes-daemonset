@@ -23,14 +23,17 @@ COPY Gemfile* /fluentd/
     && gem install bundler --version 2.1.2 \
     && bundle config silence_root_warning true \
     && bundle install --gemfile=/fluentd/Gemfile --path=/fluentd/vendor/bundle \
+    && gem list \
+    && gem install fluent-plugin-kafka --no-document \
+    && gem list \
     && SUDO_FORCE_REMOVE=yes \
     apt-get purge -y --auto-remove \
                   -o APT::AutoRemove::RecommendsImportant=false \
                   $buildDeps \
     && rm -rf /var/lib/apt/lists/* \
     && gem sources --clear-all \
-    && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem \
-    && gem install fluent-plugin-kafka --no-document
+    && rm -rf /tmp/* /var/tmp/* /usr/lib/ruby/gems/*/cache/*.gem
+    
 
 # Copy configuration files
 COPY ./conf/fluent.conf /fluentd/etc/
